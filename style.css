@@ -1,7 +1,7 @@
 /* css Zen Garden default style v1.02 */
 /* css released under Creative Commons License - http://creativecommons.org/licenses/by-nc-sa/1.0/  */
 
-/* This file based on 'Tranquille' by Dave Shea */
+/* This file based on 'CLick FUnnel' by Harrison, Kevin, and Cody */
 /* You may use this file as a foundation for any new work, but you may find it easier to start from scratch. */
 /* Not all elements are defined in this file, so you'll most likely want to refer to the xhtml as well. */
 
@@ -14,6 +14,7 @@ html {
 	padding: 0;
 	}
 body { 
+	display: flex;
 	font: georgia, sans-serif;
 	line-height: 1.5;
 	color: black; 
@@ -45,15 +46,30 @@ a:hover, a:focus, a:active {
 	text-decoration: underline; 
 	color: #1b263b;
 	}
-abbr {
-	border-bottom: none;
-	}
 
-/* @media only screen and (min-width: 45em){ 
-	body{
-		background-color: greenyellow;
+.intro {
+	background-color: #a5a5a5;
+}
+
+.preamble {
+	background-color: white;
+}
+#zen-supporting h3{
+	background-color: #ffa947;
+	height: 7vh;
+	text-align: center;
+	font-size: 2em;
+	margin: auto;
+	padding: auto;
+}
+
+
+ @media only screen and (min-width: 45em){ 
+	p {
+		max-width: 80%;
+		margin: auto;
 	}
-}*/
+}
 
 /* @media only screen and (min-width: 60em) {
 	body{
