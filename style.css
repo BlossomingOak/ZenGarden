@@ -9,7 +9,8 @@
 
 
 /* basic elements */
-html {
+
+	html {
 	margin: 0;
 	padding: 0;
 	}
@@ -25,17 +26,31 @@ body {
 p { 
 	margin-top: 0; 
 	text-align: justify;
+	padding: 20px;
 	}
+	header {
+		text-align: center;
+	}
+h1 {
+	font-size: 3em;
+	
+}
+h2 {
+	font-size: 1.7em;
+	
+
+}
 h3 { 
-	font: italic normal 1.4em georgia, sans-serif;
+	font: italic bold 1.6em georgia, sans-serif;
 	letter-spacing: 1px; 
 	margin-bottom: 0; 
-	color: #1b263b;
+	color: darkblue;
+	padding: 20px;
 	}
 a:link { 
 	font-weight: bold; 
 	text-decoration: none; 
-	color: #ffa947;
+	color: darkblue;
 	}
 a:visited { 
 	font-weight: bold; 
@@ -62,27 +77,102 @@ a:hover, a:focus, a:active {
 	margin: auto;
 	padding: auto;
 }
-
+.sidebar {
+	margin: 10px;
+	background-color: #a5a5a5;
+}
+div {
+	margin: 10px;
+}
 
  @media only screen and (min-width: 45em){ 
+	
 	p {
 		max-width: 80%;
 		margin: auto;
 	}
 }
 @media only screen and (min-width: 60em) {
-	p{
-		columns: 10em 3; 
-		column-width: 15em; 
+	.summary {
+		margin-bottom: 35px;
 	}
-	.page-wrapper {
+	.preamble {
+		display: grid;
+		grid-template-areas: 
+		'header header header'
+		'column1 column2 column3';
+		text-justify: top;
+		margin-top: 20px;
+		max-width: 100%;
+	}
+	.preamble h3{ 
+		grid-area: header; 
+		background-color: #ffa947; 
+		text-align: center; 
+		max-width: 100%;}
+
+	.preamble p:nth-child(1){ grid-area: column1; }
+	.preamble p:nth-child(2){ grid-area: column2; }
+	.preamble p:nth-child(3){ grid-area: column3; }
+
+	.explanation{
+		display: grid;
+		grid-template-areas: 'header header'
+					'column1 column2';
+		text-justify: top;
+		margin-top: 20px;
+		max-width: 100%;
+	}
 	
+	.explanation h3{ grid-area: header; margin: 0; min-width: 95%; max-width:100%;}
+	.explanation p:nth-child(1){ grid-area: column1; }
+	.explanation p:nth-child(2){ grid-area: column2; }
+	.page-wrapper {
+		
 		display: grid; 
 		grid-template-columns: 16.66% 16.66% 16.66% 16.66% 16.66% 16.66%;
 		grid-template-rows: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
 		max-width: 100%;
 		margin: 30px; 
+		border: 1px solid black;
+		background-color: white;
 	}	
+	.participation {
+		display: grid;
+		grid-template-areas: 
+		'header header header'
+		'column1 column2 column3';
+		text-justify: top;
+		margin-top: 20px;
+		max-width: 100%;
+	}
+	.participation h3{ min-width: 95%; max-width: 100%; grid-area: header; background-color: #ffa947; text-align: center;}
+	.participation p:nth-child(1){ grid-area: column1; }
+	.participation p:nth-child(2){ grid-area: column2; }
+	.participation p:nth-child(3){ grid-area: column3; }
+
+	.benefits p{
+		max-width: 500px;
+	}
+	
+	.requirements {
+		display: grid;
+		grid-template-areas: 
+		'header header'
+		'column1 column3'
+		'column2 column3'
+		'column4 column5';
+		justify-content: top;
+		margin-top: 20px;
+		max-width: 100%;
+	}
+	.requirements h3{ min-width: 95%; max-width: 100%; grid-area: header; background-color: #ffa947; text-align: center;}
+	.requirements p:nth-child(1){ grid-area: column1; }
+	.requirements p:nth-child(2){ grid-area: column2; }
+	.requirements p:nth-child(3){ grid-area: column3; }
+	.requirements p:nth-child(4){ grid-area: column4; }
+	.requirements p:nth-child(5){ grid-area: column5; }
+
 	section#zen-intro.intro{
 		grid-row: 1/2 ; 
 		grid-column: 1/7;
@@ -106,9 +196,10 @@ a:hover, a:focus, a:active {
 	.sidebar{
 		grid-column: 1/6;
 		grid-row: 8/9 ; 
+		margin: 20px;
+		min-height: 400px;
 	}
 	.wrapper{
-	
 		 display:grid; 
 		 grid-template-columns: 4;
 		 grid-template-rows: 2; 
