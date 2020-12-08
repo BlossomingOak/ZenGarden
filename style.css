@@ -7,7 +7,7 @@
 
 /* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
 
-
+/* notes */
 /* basic elements */
 
 	html {
@@ -18,10 +18,19 @@ body {
 	display: flex;
 	font: georgia, sans-serif;
 	line-height: 1.5;
-	color: black; 
+	color: #2b2d2f; 
 	background: #fff; 
-	margin: 0; 
-	padding: 0;
+	margin: auto; 
+	max-width: 100%;
+	padding: 0px;
+	}
+	.page-wrapper{
+		width: 100%;
+		padding: 0;
+		
+	}
+	header h2 abbr{
+		text-decoration: none;
 	}
 p { 
 	margin-top: 0; 
@@ -31,9 +40,18 @@ p {
 	header {
 		text-align: center;
 	}
+	.summary {
+		background-color: #2b2d2f;
+		width: 100%;
+		color: #fff;
+	}
+	.summary p a{
+		color: goldenrod;
+	}
 h1 {
 	font-size: 3em;
-	
+	color: goldenrod;
+	font-style: italic;
 }
 h2 {
 	font-size: 1.7em;
@@ -44,7 +62,7 @@ h3 {
 	font: italic bold 1.6em georgia, sans-serif;
 	letter-spacing: 1px; 
 	margin-bottom: 0; 
-	color: darkblue;
+	color: goldenrod;
 	padding: 20px;
 	}
 a:link { 
@@ -63,14 +81,23 @@ a:hover, a:focus, a:active {
 	}
 
 .intro {
-	background-color: #a5a5a5;
+	background-color: #2b2d2f;
+	color: #fff;
 }
 
 .preamble {
 	background-color: white;
+	color: #2b2d2f;
+	margin: auto;
+}
+.preamble h3{
+	background-color: darkblue;
+	color: goldenrod;
+	text-align: center;
+	font-size: 2em;
 }
 #zen-supporting h3{
-	background-color: #ffa947;
+	background-color: darkblue;
 	height: 7vh;
 	text-align: center;
 	font-size: 2em;
@@ -78,23 +105,38 @@ a:hover, a:focus, a:active {
 	padding: auto;
 }
 .sidebar {
-	margin: 10px;
+	margin: 10px auto;
 	background-color: #a5a5a5;
-}
-div {
-	margin: 10px;
+	border: 1px solid black;
+	box-shadow: 0px 10px 10px grey;
+	padding: 20px;
 }
 
+.sidebar h3{
+	color: black;
+}
  @media only screen and (min-width: 45em){ 
 	
 	p {
 		max-width: 80%;
 		margin: auto;
 	}
+	.sidebar {
+		column-count: 2;
+	}
 }
 @media only screen and (min-width: 60em) {
+	.sidebar {
+		column-count: 1;
+	}
+	h3 {
+		font-size: 2em;
+	}
 	.summary {
-		margin-bottom: 35px;
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+		background-color: #2b2d2f;
 	}
 	.preamble {
 		display: grid;
@@ -107,10 +149,11 @@ div {
 	}
 	.preamble h3{ 
 		grid-area: header; 
-		background-color: #ffa947; 
+		background-color: darkblue; 
 		text-align: center; 
-		max-width: 100%;}
-
+		max-width: 100%;
+		margin: 0px;
+	}
 	.preamble p:nth-child(1){ grid-area: column1; }
 	.preamble p:nth-child(2){ grid-area: column2; }
 	.preamble p:nth-child(3){ grid-area: column3; }
@@ -124,7 +167,7 @@ div {
 		max-width: 100%;
 	}
 	
-	.explanation h3{ grid-area: header; margin: 0; min-width: 95%; max-width:100%;}
+	.explanation h3{ grid-area: header; margin: 0px; width: 100%;}
 	.explanation p:nth-child(1){ grid-area: column1; }
 	.explanation p:nth-child(2){ grid-area: column2; }
 	.page-wrapper {
@@ -133,8 +176,7 @@ div {
 		grid-template-columns: 16.66% 16.66% 16.66% 16.66% 16.66% 16.66%;
 		grid-template-rows: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
 		max-width: 100%;
-		margin: 30px; 
-		border: 1px solid black;
+		border: 1px solid #2b2d2f;
 		background-color: white;
 	}	
 	.participation {
@@ -146,7 +188,7 @@ div {
 		margin-top: 20px;
 		max-width: 100%;
 	}
-	.participation h3{ min-width: 95%; max-width: 100%; grid-area: header; background-color: #ffa947; text-align: center;}
+	.participation h3{ width: 100%; grid-area: header; background-color: darkblue; text-align: center;}
 	.participation p:nth-child(1){ grid-area: column1; }
 	.participation p:nth-child(2){ grid-area: column2; }
 	.participation p:nth-child(3){ grid-area: column3; }
@@ -166,7 +208,7 @@ div {
 		margin-top: 20px;
 		max-width: 100%;
 	}
-	.requirements h3{ min-width: 95%; max-width: 100%; grid-area: header; background-color: #ffa947; text-align: center;}
+	.requirements h3{ width: 100%; grid-area: header; background-color: darkblue; text-align: center;}
 	.requirements p:nth-child(1){ grid-area: column1; }
 	.requirements p:nth-child(2){ grid-area: column2; }
 	.requirements p:nth-child(3){ grid-area: column3; }
@@ -200,7 +242,7 @@ div {
 		min-height: 400px;
 	}
 	.wrapper{
-		 display:grid; 
+		 display: grid; 
 		 grid-template-columns: 4;
 		 grid-template-rows: 2; 
 	}
