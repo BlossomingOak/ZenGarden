@@ -1,0 +1,420 @@
+/* css Zen Garden default style v1.02 */
+/* css released under Creative Commons License - http://creativecommons.org/licenses/by-nc-sa/1.0/  */
+/* This file based on 'CLick FUnnel' by Harrison, Kevin, and Cody */
+/* You may use this file as a foundation for any new work, but you may find it easier to start from scratch. */
+/* Not all elements are defined in this file, so you'll most likely want to refer to the xhtml as well. */
+/* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
+/* notes */
+/* basic elements */
+@font-face {
+  font-family: "bayshoreregular";
+  src: url("bayshore-webfont.woff2") format("woff2"), url("bayshore-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+html {
+  margin: 10px;
+  padding: 10px;
+}
+
+body {
+  display: flex;
+  font-family: "Oleo Script", cursive;
+  line-height: 1.5;
+  color: #2b2d2f;
+  margin: auto;
+  max-width: 100%;
+  padding: 0px;
+}
+
+svg {
+  text-align: center;
+  margin-left: 800px;
+  animation-duration: 10s;
+  animation-name: slide;
+}
+
+@keyframes slide {
+  from {
+    margin-left: 12%;
+    width: 10%;
+  }
+  to {
+    margin-left: 58%;
+    width: 50%;
+  }
+}
+.page-wrapper {
+  width: 100%;
+  padding: 0px;
+}
+
+header h2 abbr {
+  text-decoration: none;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: #001f3f;
+  }
+  100% {
+    background-color: #ff4136;
+  }
+}
+@keyframes blur {
+  0% {
+    background-color: white;
+    left: 0px;
+    top: 0px;
+  }
+  25% {
+    background-color: yellow;
+    left: 200px;
+    top: 0px;
+  }
+  50% {
+    background-color: #15F4EE;
+    left: 200px;
+    top: 200px;
+  }
+  75% {
+    background-color: #39FF14;
+    left: 0px;
+    top: 200px;
+  }
+  100% {
+    background-color: #ff6ec7;
+    left: 0px;
+    top: 0px;
+  }
+}
+p {
+  margin-top: 0;
+  text-align: justify;
+  padding: 20px;
+}
+
+p {
+  animation-duration: 3s;
+  animation-name: slide;
+}
+
+@keyframes slide {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+  to {
+    margin-left: 8%;
+    width: 100%;
+  }
+}
+header,
+h1,
+h2,
+h3,
+h4 {
+  animation: pulse 10s ease infinite alternate, blur 5s linear infinite alternate, nudge 5s linear infinite alternate;
+  text-align: center;
+}
+
+.summary {
+  background-color: #2b2d2f;
+  width: 100%;
+  color: white;
+}
+
+.summary p a {
+  color: #bc13fe;
+}
+
+h1 {
+  font-size: 5em;
+  color: #bc13fe;
+  font-family: "bayshoreregular";
+}
+
+h2 {
+  font-size: 3em;
+  font-family: "bayshoreregular";
+}
+
+h3 {
+  font: italic bold 2.9em "bayshoreregular";
+  letter-spacing: 1px;
+  margin-bottom: 0px;
+  color: #bc13fe;
+  padding: 20px;
+  font-family: "bayshoreregular";
+}
+
+a:link {
+  font-weight: bold;
+  text-decoration: none;
+  color: darkblue;
+}
+
+a:visited {
+  font-weight: bold;
+  text-decoration: none;
+  color: #a5a5a5;
+}
+
+a:hover,
+a:focus,
+a:active {
+  text-decoration: underline;
+  color: #1b263b;
+}
+
+.intro {
+  background-color: #2b2d2f;
+  color: #bc13fe;
+}
+
+.preamble {
+  background-color: white;
+  color: #2b2d2f;
+  margin: auto;
+}
+
+.preamble h3 {
+  background-color: darkblue;
+  color: #bc13fe;
+  text-align: center;
+  font-size: 3em;
+  width: 100%;
+  margin: auto;
+  margin-left: -20px;
+}
+
+#zen-supporting h3 {
+  background-color: darkblue;
+  height: 7vh;
+  text-align: center;
+  font-size: 3em;
+  margin: 15px;
+  padding: 15px;
+  margin-left: auto;
+}
+
+.sidebar {
+  margin: 10px auto;
+  background-color: #a5a5a5;
+  border: 1px solid black;
+  box-shadow: 0px 10px 10px grey;
+  padding: 20px;
+}
+
+.sidebar h3 {
+  color: black;
+  font-size: 3em;
+}
+
+@media only screen and (min-width: 45em) {
+  p {
+    max-width: 80%;
+    margin: auto;
+  }
+
+  .sidebar {
+    column-count: 2;
+  }
+}
+@media only screen and (min-width: 60em) {
+  .sidebar {
+    column-count: 1;
+  }
+
+  h3 {
+    font-size: 3em;
+  }
+
+  .summary {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    background-color: #2b2d2f;
+  }
+
+  .preamble {
+    display: grid;
+    grid-template-areas: "header header header" "column1 column2 column3";
+    margin-bottom: 30px;
+    margin-top: 30px;
+    min-height: 300px;
+    max-width: 100%;
+  }
+
+  .preamble h3 {
+    grid-area: header;
+    background-color: darkblue;
+    text-align: center;
+    max-width: 100%;
+    margin-left: auto;
+    margin: 0px;
+  }
+
+  .preamble p:nth-child(1) {
+    grid-area: column1;
+  }
+
+  .preamble p:nth-child(2) {
+    grid-area: column2;
+  }
+
+  .preamble p:nth-child(3) {
+    grid-area: column3;
+  }
+
+  .explanation {
+    display: grid;
+    grid-template-areas: "header header" "column1 column2";
+    margin-left: 0px;
+    margin-top: 30px;
+    max-width: 100%;
+  }
+
+  .explanation h3 {
+    grid-area: header;
+    margin: 0px;
+    width: 100%;
+  }
+
+  .explanation p:nth-child(1) {
+    grid-area: column1;
+  }
+
+  .explanation p:nth-child(2) {
+    grid-area: column2;
+  }
+
+  .page-wrapper {
+    display: grid;
+    grid-template-columns: 16.66% 16.66% 16.66% 16.66% 16.66% 16.66%;
+    grid-template-rows: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+    max-width: 100%;
+    border: 1px solid #2b2d2f;
+    background-color: white;
+    overflow: hidden;
+  }
+
+  .participation {
+    display: grid;
+    grid-template-areas: "header header header" "column1 column2 column3";
+    margin-top: 20px;
+    max-width: 100%;
+  }
+
+  .participation h3 {
+    width: 100%;
+    grid-area: header;
+    background-color: darkblue;
+    text-align: center;
+  }
+
+  .participation p:nth-child(1) {
+    grid-area: column1;
+  }
+
+  .participation p:nth-child(2) {
+    grid-area: column2;
+  }
+
+  .participation p:nth-child(3) {
+    grid-area: column3;
+  }
+
+  .benefits p {
+    max-width: 500px;
+  }
+
+  .benefits {
+    width: 105%;
+  }
+
+  .requirements {
+    display: grid;
+    grid-template-areas: "header header" "column1 column3" "column2 column3" "column4 column5";
+    margin-top: 20px;
+    max-width: 100%;
+  }
+
+  .requirements h3 {
+    width: 100%;
+    grid-area: header;
+    background-color: darkblue;
+    text-align: center;
+  }
+
+  .requirements p:nth-child(1) {
+    grid-area: column1;
+  }
+
+  .requirements p:nth-child(2) {
+    grid-area: column2;
+  }
+
+  .requirements p:nth-child(3) {
+    grid-area: column3;
+  }
+
+  .requirements p:nth-child(4) {
+    grid-area: column4;
+  }
+
+  .requirements p:nth-child(5) {
+    grid-area: column5;
+  }
+
+  section#zen-intro.intro {
+    grid-row: 1/2;
+    grid-column: 1/7;
+  }
+
+  div#zen-preamble.preamble {
+    grid-column: 1/7;
+    grid-row: 1/3;
+  }
+
+  div#zen-supporting.main.supporting {
+    grid-row: 3/6;
+    grid-column: 1/7;
+  }
+
+  .sidebar {
+    grid-column: 1/6;
+    grid-row: 8/9;
+    margin: 20px;
+    min-height: 400px;
+    margin-top: -20px;
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: 4;
+    grid-template-rows: 2;
+  }
+
+  .design-selection {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  .design-archives {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+
+  .zen-resources {
+    grid-column: 3/4;
+    grid-row: 2/3;
+  }
+
+  footer {
+    text-align: center;
+    font-size: 3em;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
