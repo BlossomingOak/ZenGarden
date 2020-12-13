@@ -1,0 +1,476 @@
+/* css Zen Garden default style v1.02 */
+/* css released under Creative Commons License - http://creativecommons.org/licenses/by-nc-sa/1.0/  */
+
+/* This file based on 'CLick FUnnel' by Harrison, Kevin, and Cody */
+/* You may use this file as a foundation for any new work, but you may find it easier to start from scratch. */
+/* Not all elements are defined in this file, so you'll most likely want to refer to the xhtml as well. */
+
+/* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
+
+/* notes */
+/* basic elements */
+@font-face {
+  font-family: 'bayshoreregular';
+  src: url('bayshore-webfont.woff2') format('woff2'),
+       url('bayshore-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+$line-height: 1.5;
+$text-mid: center;
+$blur1:white;
+$blur2: yellow;
+$blur3: #15F4EE;
+$blur4: #39FF14;
+$blur5:#ff6ec7; 
+$page: #2b2d2f;
+$background-sum: white;
+$link-color: #1b263b;
+$link-vis: #a5a5a5;
+$link: darkblue;
+$color-gold: goldenrod;
+$text-hard: bold;
+$title-size: 3em;
+$pulse-beg: #001f3f;
+$pulse-end: #ff4136;
+$title-main: 5em;
+$no-style: none;
+$font-type: 'Oleo Script', cursive;
+$text-under: underline;
+$fullpage: 100%;
+$margin-otto: auto;
+$padmar-padding: 10px;
+$shadow: 0px 10px 10px grey;
+$no-padding: 0px; 
+$retro: 'bayshoreregular';
+$purple-retro: #bc13fe;
+
+
+html {
+  margin: $padmar-padding;
+  padding: $padmar-padding;
+}
+
+body {
+  display: flex;
+  font-family: $font-type;
+  line-height: $line-height;
+  color: $page;
+  margin: $margin-otto;
+  max-width: $fullpage;
+  padding: $no-padding;
+}
+
+svg {
+  text-align: $text-mid;
+  margin-left: 800px;
+  animation-duration: 10s;
+  animation-name: slide;
+}
+
+@keyframes slide {
+  from {
+    margin-left: 12%;
+    width: 10%;
+  }
+
+  to {
+    margin-left: 58%;
+    width: 50%;
+  }
+}
+
+.page-wrapper {
+  width: $fullpage;
+  padding: $no-padding;
+}
+
+header h2 abbr {
+  text-decoration: $no-style;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: $pulse-beg;
+  }
+
+  100% {
+    background-color: $pulse-end;
+  }
+}
+
+@keyframes blur {
+  0% {
+    background-color: $blur1;
+    left: $no-padding;
+    top: $no-padding;
+  }
+
+  25% {
+    background-color: $blur2;
+    left: 200px;
+    top: $no-padding;
+  }
+
+  50% {
+    background-color: $blur3;
+    left: 200px;
+    top: 200px;
+  }
+
+  75% {
+    background-color: $blur4;
+    left: $no-padding;
+    top: 200px;
+  }
+
+  100% {
+    background-color: $blur5;
+    left: $no-padding;
+    top: $no-padding;
+  }
+}
+
+p {
+  margin-top: 0;
+  text-align: justify;
+  padding: 20px;
+}
+
+p {
+  animation-duration: 3s;
+  animation-name: slide;
+}
+
+@keyframes slide {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 8%;
+    width: 100%;
+  }
+}
+
+header,
+h1,
+h2,
+h3,
+h4 {
+  animation: pulse 10s ease infinite alternate,
+    blur 5s linear infinite alternate, nudge 5s linear infinite alternate;
+  text-align: $text-mid;
+}
+
+.summary {
+  background-color: $page;
+  width: $fullpage;
+  color: $background-sum;
+}
+
+.summary p a {
+  color: $purple-retro;
+}
+
+h1 {
+  font-size: $title-main;
+  color: $purple-retro;
+  font-family: $retro; 
+}
+
+h2 {
+  font-size: $title-size;
+  font-family:$retro; 
+
+}
+
+h3 {
+  font: italic $text-hard 2.9em $retro;
+  letter-spacing: 1px;
+  margin-bottom: $no-padding;
+  color: $purple-retro;
+  padding: 20px;
+  font-family: $retro;
+}
+
+a:link {
+  font-weight: $text-hard;
+  text-decoration: $no-style;
+  color: $link;
+}
+
+a:visited {
+  font-weight: $text-hard;
+  text-decoration: $no-style;
+  color: $link-vis;
+}
+
+a:hover,
+a:focus,
+a:active {
+  text-decoration: $text-under;
+  color: $link-color;
+}
+
+.intro {
+  background-color: $page;
+  color: $purple-retro;
+}
+
+.preamble {
+  background-color: $background-sum;
+  color: $page;
+  margin: $margin-otto;
+}
+
+.preamble h3 {
+  background-color: $link;
+  color: $purple-retro;
+  text-align: $text-mid;
+  font-size: $title-size;
+  width: 100%; 
+  margin: $margin-otto;
+  margin-left: -20px; 
+}
+
+#zen-supporting h3 {
+  background-color: $link;
+  height: 7vh;
+  text-align: $text-mid;
+  font-size: $title-size;
+  margin: 15px;
+  padding: 15px;
+  margin-left: $margin-otto;
+}
+
+.sidebar {
+  margin: 10px $margin-otto;
+  background-color: $link-vis;
+  border: 1px solid black;
+  box-shadow: $shadow;
+  padding: 20px;
+}
+
+.sidebar h3 {
+  color: black;
+  font-size: $title-size; 
+}
+
+@media only screen and (min-width: 45em) {
+  p {
+    max-width: 80%;
+    margin: $margin-otto;
+  }
+
+  .sidebar {
+    column-count: 2;
+  }
+}
+
+@media only screen and (min-width: 60em) {
+  .sidebar {
+    column-count: 1;
+  }
+
+  h3 {
+    font-size: $title-size;
+  }
+
+  .summary {
+    width: $fullpage;
+    margin-left: 0;
+    margin-right: 0;
+    background-color: $page;
+  }
+
+  .preamble {
+    display: grid;
+    grid-template-areas:
+      "header header header"
+      "column1 column2 column3";
+    margin-bottom: 30px;
+    margin-top: 30px;
+    min-height: 300px; 
+    max-width: $fullpage;
+  }
+
+  .preamble h3 {
+    grid-area: header;
+    background-color: $link;
+    text-align: $text-mid;
+    max-width: $fullpage;
+    margin-left:$margin-otto;
+    margin: 0px;
+  }
+
+  .preamble p:nth-child(1) {
+    grid-area: column1;
+  }
+
+  .preamble p:nth-child(2) {
+    grid-area: column2;
+  }
+
+  .preamble p:nth-child(3) {
+    grid-area: column3;
+  }
+
+  .explanation {
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "column1 column2";
+    margin-left: 0px; 
+    margin-top: 30px;
+    max-width: 100%;
+  }
+
+  .explanation h3 {
+    grid-area: header;
+    margin: 0px;
+    width: $fullpage;
+  }
+
+  .explanation p:nth-child(1) {
+    grid-area: column1;
+  }
+
+  .explanation p:nth-child(2) {
+    grid-area: column2;
+  }
+
+  .page-wrapper {
+    display: grid;
+    grid-template-columns: 16.66% 16.66% 16.66% 16.66% 16.66% 16.66%;
+    grid-template-rows: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+    max-width: $fullpage;
+    border: 1px solid $page;
+    background-color: $background-sum;
+    overflow: hidden; 
+  }
+
+  .participation {
+    display: grid;
+    grid-template-areas:
+      "header header header"
+      "column1 column2 column3";
+    margin-top: 20px;
+    max-width: 100%;
+  }
+
+  .participation h3 {
+    width: $fullpage;
+    grid-area: header;
+    background-color: $link;
+    text-align: $text-mid;
+  }
+
+  .participation p:nth-child(1) {
+    grid-area: column1;
+  }
+
+  .participation p:nth-child(2) {
+    grid-area: column2;
+  }
+
+  .participation p:nth-child(3) {
+    grid-area: column3;
+  }
+
+  .benefits p {
+    max-width: 500px;
+  }
+  .benefits{
+    width: 105%; 
+  }
+
+  .requirements {
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "column1 column3"
+      "column2 column3"
+      "column4 column5";
+    margin-top: 20px;
+    max-width: $fullpage;
+  }
+
+  .requirements h3 {
+    width: $fullpage;
+    grid-area: header;
+    background-color: $link;
+    text-align: $text-mid;
+  }
+
+  .requirements p:nth-child(1) {
+    grid-area: column1;
+  }
+
+  .requirements p:nth-child(2) {
+    grid-area: column2;
+  }
+
+  .requirements p:nth-child(3) {
+    grid-area: column3;
+  }
+
+  .requirements p:nth-child(4) {
+    grid-area: column4;
+  }
+
+  .requirements p:nth-child(5) {
+    grid-area: column5;
+  }
+
+  section#zen-intro.intro {
+    grid-row: 1/2;
+    grid-column: 1/7;
+  }
+
+  div#zen-preamble.preamble {
+    grid-column: 1/7;
+    grid-row: 1/3;
+  }
+
+  div#zen-supporting.main.supporting {
+    grid-row: 3/6;
+    grid-column: 1/7;
+  }
+
+  .sidebar {
+    grid-column: 1/6;
+    grid-row: 8/9;
+    margin: 20px;
+    min-height: 400px;
+    margin-top: -20px; 
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: 4;
+    grid-template-rows: 2;
+  }
+
+  .design-selection {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  .design-archives {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+
+  .zen-resources {
+    grid-column: 3/4;
+    grid-row: 2/3;
+  }
+
+  footer {
+    text-align: $text-mid;
+    font-size: $title-size; 
+  }
+}
